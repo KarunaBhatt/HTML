@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+
+.tablink {
+  background-color: #4f93c1;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#Home {background-color: rgb(32, 47, 93);}
+#GALLERY {background-color: rgb(230, 134, 187);}
+#Contact {background-color: rgb(104, 104, 235);}
+#About {background-color: ciyan;}
+</style>
+</head>
+<body background-color:"lightblue">
+
+  
+<button class="tablink" onclick="openPage('Home', this, 'red')">Home</button>
+<button class="tablink" onclick="openPage('GALLERY', this, 'green')" id="defaultOpen">GALLERY</button>
+<button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button>
+<button class="tablink" onclick="openPage('About', this, 'orange')">About</button>
+</br>
+</br>
+</br>
+
+<p><h1>Welcome to Rudrax bunglows</h1></p>
+
+<div id="Home" class="tabcontent">
+  <h3>Home</h3>
+  <p>Home is where the heart is..</p>
+</div>
+
+<div id="GALLERY" class="tabcontent">
+  <h3>GALLERY</h3>
+  <p>Some photos this fine day!</p> 
+  
+</div>
+
+<div id="Contact" class="tabcontent">
+  <h3>Contact</h3>
+  <p>Get in touch, or swing by for a cup of coffee.</p>
+</div>
+
+<div id="About" class="tabcontent">
+  <h3>About</h3>
+  <p>Who we are and what we do.</p>
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
